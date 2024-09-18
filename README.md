@@ -293,8 +293,18 @@ cd vana-dlp-smart-contracts
 
 Install dependencies:
 
+
+```bash
+nvm install 18.8.0 && nvm use 18.8.0
+```
+
 ```bash
 yarn install
+```
+
+**upgrade**
+```bash
+yarn upgrade
 ```
 
 ```bash
@@ -311,6 +321,10 @@ Example: {"address": "0x0XXXXXXXXXXXXXXXXXXXA", "publicKey": "0xa08b00caXXXXXXXX
 Edit the `.env` file in the `vana-dlp-smart-contracts` directory:
 
 ```bash
+nano .env
+```
+
+```bash
 DEPLOYER_PRIVATE_KEY=0x... (your coldkey private key)
 OWNER_ADDRESS=0x... (your coldkey address)
 SATORI_RPC_URL=https://rpc.satori.vana.org
@@ -324,6 +338,12 @@ Deploy contracts:
 ```bash
 npx hardhat deploy --network satori --tags DLPDeploy
 ```
+
+EXAMPLE OUTPUT:
+Successfully generated 162 typings!
+Compiled 52 Solidity files successfully (evm target: paris).
+DataLiquidityPoolToken deployed at: 0xXXXXXXXXXXXXXXXXXXXXXXXXa45
+DataLiquidityPool "sunkriptodlp" deployed at: 0xXXXXXXXXXXXXXXXXXXXXXXXXas4
 
 Note the deployed addresses for DataLiquidityPool and DataLiquidityPoolToken.
 
@@ -340,10 +360,12 @@ If no changes were made, contracts should be verified automatically.
 
 Visit [https://satori.vanascan.io/address/](https://satori.vanascan.io/address/):
 
-- Go to the "Write proxy" tab
+- Go to the "Contract" tab and after "Write proxy" tab
 - Connect your wallet
-- Call `updateFileRewardDelay` and set it to 0
-- Call `addRewardsForContributors` with 1,000,000,000,000,000,000,000 (1 million tokens)
+- Make sure you added to '' Satori Network '' to Metamask
+- Refresh the page
+- Find `updateFileRewardDelay` and set it to 0
+- Find `addRewardsForContributors` with 1,000,000,000,000,000,000,000 (1 million tokens)
 
 Update the `.env` file in the `vana-dlp-chatgpt` directory:
 
