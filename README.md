@@ -366,14 +366,6 @@ Visit [https://satori.vanascan.io/address/](https://satori.vanascan.io/address/)
 - Find `updateFileRewardDelay` and set it to 0
 - Find `addRewardsForContributors` with 1000000000000000000000 (1 million tokens)
 
-Update the `.env` file in the `vana-dlp-chatgpt` directory:
-
-```bash
-DLP_SATORI_CONTRACT=0x... (DataLiquidityPool address)
-DLP_TOKEN_SATORI_CONTRACT=0x... (DataLiquidityPoolToken address)
-PRIVATE_FILE_ENCRYPTION_PUBLIC_KEY_BASE64=... (content of public_key_base64.asc)
-```
-
 ### 16. Validator Setup
 
 Follow these steps whether you're a DLP creator or joining an existing DLP. Ensure you have completed the Setup section.
@@ -412,7 +404,7 @@ DLP_CONTRACT_ADDRESS=0xaYOURDLPADDRESS
 DLP_SATORI_CONTRACT=0xaYOURDLPADDRESS
 DLP_TOKEN_VANA_CONTRACT=0x6381YOURDLPTOKEN-ADDRESS
 DLP_TOKEN_SATORI_CONTRACT=0x6381YOURDLPTOKEN-ADDRESS
-PRIVATE_FILE_ENCRYPTION_PUBLIC_KEY_BASE64=LS0tLS1CR
+PRIVATE_FILE_ENCRYPTION_PUBLIC_KEY_BASE64=YOUR PUBLIC_KEYBASE64
 
 ```bash                                                                   
 # The network to use, currently Vana Satori testnet
