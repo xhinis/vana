@@ -399,13 +399,13 @@ If you're a non-DLP creator, edit the `.env` file with the information provided 
 nano .env
 ```
 If you've deployed your own DLP contract, make sure to update the following 5 fields:
-
+```bash
 DLP_CONTRACT_ADDRESS=0xaYOURDLPADDRESS
 DLP_SATORI_CONTRACT=0xaYOURDLPADDRESS
 DLP_TOKEN_VANA_CONTRACT=0x6381YOURDLPTOKEN-ADDRESS
 DLP_TOKEN_SATORI_CONTRACT=0x6381YOURDLPTOKEN-ADDRESS
 PRIVATE_FILE_ENCRYPTION_PUBLIC_KEY_BASE64=YOUR PUBLIC_KEYBASE64
-
+```
 ```bash                                                                   
 # The network to use, currently Vana Satori testnet
 OD_CHAIN_NETWORK=satori
