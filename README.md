@@ -1,4 +1,4 @@
-# 0G
+# Vana
 
 ![Vana Image](https://i.imgur.com/tvAuEGr.png)
 
