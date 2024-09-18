@@ -107,8 +107,7 @@ cp .env.example .env
 nano .env
 ```
 
-```bash
-  GNU nano 6.2                                                                                 .env                                                                                          
+```bash                                                                                        
 # The network to use, currently Vana Satori testnet
 OD_CHAIN_NETWORK=satori
 OD_CHAIN_NETWORK_ENDPOINT=https://rpc.satori.vana.org
