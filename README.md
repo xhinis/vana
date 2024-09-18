@@ -136,13 +136,60 @@ CTRL + X + Y
 
 
 
-### 9. (Optional) Install Vana CLI
+### 9. Install Vana CLI
 
 To install `vanacli` system-wide:
 
 ```bash
 pip install vana
 ```
+
+** If you will get error here follow these steps otherwise jump to step 10** 
+It seems you're encountering issues with broken package dependencies. To fix this, try the following steps:
+
+a. **Fix Broken Packages:**
+
+   Run the following command to correct any broken package dependencies:
+
+   ```bash
+   sudo apt --fix-broken install
+   ```
+
+b. **Update and Upgrade Packages:**
+
+   After fixing broken packages, update and upgrade your packages to ensure everything is up to date:
+
+   ```bash
+   sudo apt update
+   sudo apt upgrade
+   ```
+
+c. **Once the broken packages are fixed, install the `python3.10-venv` package:**
+
+   ```bash
+   sudo apt install python3.10-venv
+   ```
+
+d. **Create and Activate Virtual Environment:**
+
+   After successfully installing `python3.10-venv`, create and activate your virtual environment:
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+e. **Install Vana:**
+
+   With the virtual environment activated, install Vana:
+
+   ```bash
+   pip install vana
+   ```
+
+![Output](https://i.imgur.com/TGBz6g1.png)
+
+Let me know if you encounter any more issues!
 
 ### 10. Create a Wallet
 
