@@ -214,16 +214,41 @@ Configure MetaMask with the following details:
 - **RPC URL**: https://rpc.satori.vana.org
 - **Chain ID**: 14801
 - **Currency**: VANA
+- **Explorer**: https://satori.vanascan.io/
 
 ### 12. Export Your Private Keys
 
 Export private keys using the Vana CLI:
+Follow the prompts to export both the coldkey and hotkey private keys.
 
+**a. Coldkey**
 ```bash
 vanacli wallet export_private_key
 ```
 
-Follow the prompts to export both the coldkey and hotkey private keys.
+OUTPUT:**Save in safe place.**
+
+```bash
+Enter wallet name (default):
+Enter key type [coldkey/hotkey] (coldkey): coldkey
+Enter your coldkey password:
+Your coldkey private key:
+```
+
+**b. Hotkey**
+
+**Don't forget to write hotkey when it asks you. If you will not write anything you will get key of coldkey**
+```bash
+vanacli wallet export_private_key
+```
+
+OUTPUT:**Save in safe place.**
+```bash
+Enter wallet name (default):
+Enter key type [coldkey/hotkey] (coldkey): coldkey
+Enter your coldkey password:
+Your coldkey private key:
+```
 
 ### 13. Import Keys to MetaMask
 
@@ -261,7 +286,7 @@ The script generates four files:
 Clone the DLP Smart Contract repository:
 
 ```bash
-cd ..
+cd
 git clone https://github.com/vana-com/vana-dlp-smart-contracts.git
 cd vana-dlp-smart-contracts
 ```
@@ -271,6 +296,17 @@ Install dependencies:
 ```bash
 yarn install
 ```
+
+```bash
+npm install --save-dev hardhat
+```
+
+```bash
+cat ~/.vana/wallets/default/hotkeys/default
+```
+
+**Save the output**
+Example: {"address": "0x0XXXXXXXXXXXXXXXXXXXA", "publicKey": "0xa08b00caXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX86", "privateKey": "0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX1"}(venv)
 
 Edit the `.env` file in the `vana-dlp-smart-contracts` directory:
 
