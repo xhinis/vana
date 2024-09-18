@@ -19,12 +19,11 @@
 
 | Components  | Minimum Requirements |
 |-------------|----------------------|
-| CPU         | 4 Cores               |
-| RAM         | 8+ GB                 |
-| Storage     | 400 GB SSD            |
+| CPU         | 2 Cores               |
+| RAM         | 4+ GB                 |
+| Storage     | 50++ GB SSD            |
+| Ubuntu      | 22.04         |
 
-
-# Ubuntu 22.04
 
 
 ## Setup Steps
