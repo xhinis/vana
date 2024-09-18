@@ -342,10 +342,10 @@ npx hardhat deploy --network satori --tags DLPDeploy
 EXAMPLE OUTPUT:
 Successfully generated 162 typings!
 Compiled 52 Solidity files successfully (evm target: paris).
-DataLiquidityPoolToken deployed at: 0xXXXXXXXXXXXXXXXXXXXXXXXXa45
-DataLiquidityPool "sunkriptodlp" deployed at: 0xXXXXXXXXXXXXXXXXXXXXXXXXas4
+DataLiquidityPoolToken deployed at: 0xXXXXXXXXXXXXXXXXXXXXXXXXa45 (DataLiquidityPoolToken)
+DataLiquidityPool "sunkriptodlp" deployed at: 0xXXXXXXXXXXXXXXXXXXXXXXXXas4 (DataLiquidityPool address)
 
-Note the deployed addresses for DataLiquidityPool and DataLiquidityPoolToken.
+**Note the deployed addresses for DataLiquidityPool and DataLiquidityPoolToken.**
 
 **Optional**: Verify the contracts if you made changes to the code:
 
@@ -365,7 +365,7 @@ Visit [https://satori.vanascan.io/address/](https://satori.vanascan.io/address/)
 - Make sure you added to '' Satori Network '' to Metamask
 - Refresh the page
 - Find `updateFileRewardDelay` and set it to 0
-- Find `addRewardsForContributors` with 1,000,000,000,000,000,000,000 (1 million tokens)
+- Find `addRewardsForContributors` with 1000000000000000000000 (1 million tokens)
 
 Update the `.env` file in the `vana-dlp-chatgpt` directory:
 
@@ -393,15 +393,43 @@ For non-DLP creators, request the following from the DLP creator:
 Ensure you're in the `vana-dlp-chatgpt` directory:
 
 ```bash
+cd
 cd vana-dlp-chatgpt
 ```
+
+```bash
+cat public_key_base64.asc
+```
+**Save output**
 
 If you're a non-DLP creator, edit the `.env` file with the information provided by the DLP creator:
 
 ```bash
-DLP_SATORI_CONTRACT=0x... (DataLiquidityPool address)
-DLP_TOKEN_SATORI_CONTRACT=0x... (DataLiquidityPoolToken address)
-PRIVATE_FILE_ENCRYPTION_PUBLIC_KEY_BASE64=... (base64-encoded private key)
+nano .env
+```
+
+
+```bash
+  GNU nano 6.2                                                                                 .env                                                                                          
+# The network to use, currently Vana Satori testnet
+OD_CHAIN_NETWORK=satori
+OD_CHAIN_NETWORK_ENDPOINT=https://rpc.satori.vana.org
+
+# Optional: OpenAI API key for additional data quality check
+OPENAI_API_KEY="sk-nXXXXX"
+
+# Optional: Your own DLP smart contract address once deployed to the network, useful for local testing
+DLP_CONTRACT_ADDRESS=0xaYOURDLPADRESS
+DLP_MOKSHA_CONTRACT=0xee4e3Fd107BE4097718B8aACFA3a8d2d9349C9a5
+DLP_SATORI_CONTRACT=0xaYOURDLPADRESS
+
+# Optional: Your own DLP token contract address once deployed to the network, useful for local testing
+DLP_TOKEN_VANA_CONTRACT=0x6381YOURDLPTOKEN-ADRES
+DLP_TOKEN_MOKSHA_CONTRACT=0xF1925473bA6aa147EeB2529197C2704454D66b43
+DLP_TOKEN_SATORI_CONTRACT=0x6381YOURDLPTOKEN-ADRES
+
+# The private key for the DLP, follow "Generate validator encryption keys" section in the README
+PRIVATE_FILE_ENCRYPTION_PUBLIC_KEY_BASE64=LS0tLS1CR
 ```
 
 **Fund Validator with DLP Tokens**:
