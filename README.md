@@ -46,14 +46,20 @@ sudo apt install -y curl gnupg
 Add the NodeSource repository and install Node.js:
 
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt install -y nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 ```
 
-Update npm to the latest version:
-
 ```bash
-sudo npm install -g npm@10.8.3
+echo 'export NVM_DIR="$HOME/.nvm"' >> $HOME/.bash_profile
+echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> $HOME/.bash_profile
+echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> $HOME/.bash_profile
+```
+```bash
+nvm install --lts
+```
+```bash
+node -v
+npm -v
 ```
 
 ### 5. Clone the Repository
@@ -75,13 +81,17 @@ sudo apt update
 sudo apt install python3.11 python3.11-venv python3.11-dev
 
 ```
-
 ```bash
-poetry env use python3.11
+curl -sSL https://install.python-poetry.org | python3 -
+```
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bash_profile
+source $HOME/.bash_profile
+poetry --version
 ```
 
 ```bash
-poetry install
+poetry env use python3.11
 ```
 
 ```bash
