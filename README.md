@@ -98,7 +98,7 @@ docker compose up
 docker logs -f --tail 100 vanacgpt-sixgpt3-1
 ```
 
-[logs](https://raw.githubusercontent.com/xhinis/vana/refs/heads/main/vanasixgpt.png)
+![logs](https://raw.githubusercontent.com/xhinis/vana/refs/heads/main/vanasixgpt.png)
 
 
 
